@@ -212,6 +212,9 @@ GreeHeaterCooler.prototype = {
             case commands.mode.value.heat:
                 state = Characteristic.CurrentHeaterCoolerState.HEATING;
                 break;
+            case commands.mode.value.dry:
+                state = Characteristic.CurrentHeaterCoolerState.DRY;
+                break;
             case commands.mode.value.auto:
                 state = Characteristic.CurrentHeaterCoolerState.IDLE;
                 break;
@@ -247,6 +250,9 @@ GreeHeaterCooler.prototype = {
             case commands.mode.value.heat:
                 state = Characteristic.TargetHeaterCoolerState.HEAT;
                 break;
+            case commands.mode.value.dry:
+                state = Characteristic.TargetHeaterCoolerState.DRY;
+                break;
             default:
                 state = Characteristic.TargetHeaterCoolerState.AUTO;
         }
@@ -263,6 +269,9 @@ GreeHeaterCooler.prototype = {
                     break;
                 case Characteristic.TargetHeaterCoolerState.COOL:
                     mode = commands.mode.value.cool;
+                    break;
+                case Characteristic.TargetHeaterCoolerState.DRY:
+                    mode = commands.mode.value.dry;
                     break;
                 default:
                     mode = commands.mode.value.auto;
